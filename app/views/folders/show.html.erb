@@ -23,14 +23,23 @@
 <!--Display of all versions-->
 <div class="row text-center">
   <h2 >All versions</h2>
-</div>
-<div id="versions" class="d-flex justify-content-center gap-3 flex-wrap m-3">
-  <% @folder.versions.each do |version| %>
-    <div>
-    <%= render version %>
-    </div>
+
+  <% if @folder.versions_count < 1 %>
+    <p class="fst-italic">No version available to view.</p>
+  <% else %>
+
+  <div id="versions" class="d-flex justify-content-center gap-3 flex-wrap m-3">
+    <% @folder.versions.each do |version| %>
+      <div>
+      <%= render version %>
+      </div>
+    <% end %>
+  </div>
   <% end %>
+
 </div>
+
+
 
 <!--Delete folder button-->
 <div class="d-flex justify-content-center m-2">

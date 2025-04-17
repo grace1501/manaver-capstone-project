@@ -29,7 +29,7 @@ task({ :sample_data => :environment }) do
 
       versions = []
     
-      for i in 2..5 do
+      for i in 1..5 do
         version = Version.new
         version.name = "#{folder.name} v#{i}"
         version.description = Faker::Quote.famous_last_words
