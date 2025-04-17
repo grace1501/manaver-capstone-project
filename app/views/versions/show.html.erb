@@ -8,10 +8,10 @@
 
 <%= render @version %>
 
-<div class="m-3">
+<div class="mb-3 mt-3">
   <%= link_to "Edit this version", edit_version_path(@version), class: "btn btn-sm btn-primary text-white" %>
 </div>
 
-<div class="m-3">
+<div class="mb-3">
   <%= button_to "Destroy this version", @version, method: :delete, class: "btn btn-sm btn-danger text-white" %>
 </div>
