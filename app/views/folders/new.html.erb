@@ -1,9 +1,12 @@
-<h1>New file</h1>
+<div class="container-fluid justify-content-center text-center m-3">
+  <div>
+    <h1>New file</h1>
+    <%= render "form", folder: @folder %>
+  </div>
+  
+  <br>
 
-<%= render "form", folder: @folder %>
-
-<br>
-
-<div>
-  <%= link_to "Back to all files", folders_path %>
+  <div>
+    <%= link_to "Back to all files", folders_path %>
+  </div>
 </div>
