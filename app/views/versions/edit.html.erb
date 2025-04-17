@@ -1,0 +1,11 @@
+<h1>Editing version</h1>
+
+<%= render "form", version: @version %>
+
+<br>
+
+<div>
+  <%= link_to "Back to version info", @version %> |
+  <%= link_to "All versions of #{@version.folder.name}", folder_path(@version.folder_id) %>
+  
+</div>

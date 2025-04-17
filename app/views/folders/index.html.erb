@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="row text-center">
+  <h1>All files</h1>
+  <div>
+    <%= link_to "Add new", new_folder_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<br>
+<div id="folders">
+  <ul class="list-group">
+  
+    <% @folders.each do |folder| %>
+      <%= render folder %>
+    <% end %>
+
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="row mb-3">
+  <%= link_to "All versions of #{@version.folder.name}", folder_path(@version.folder_id) %>
+</div>
+
+<%= render @version %>
+
+<div class="m-3">
+  <%= link_to "Edit this version", edit_version_path(@version), class: "btn btn-sm btn-primary text-white" %>
+</div>
+
+<div class="m-3">
+  <%= button_to "Destroy this version", @version, method: :delete, class: "btn btn-sm btn-danger text-white" %>
+</div>

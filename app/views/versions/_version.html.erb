@@ -1,0 +1,57 @@
+<div id="<%= dom_id version %>" class="card" style="width: 18rem;">
+  <% if version.folder.default_version == version %>
+    <div class="card-header bg-success p-2 text-white">
+      Default version
+    </div>
+  <% end %>
+  
+    <% if version.link.attached? %>
+      <%= image_tag url_for(version.link), class: "card-img-top", alt: version.name %>
+    <% else %>
+      <%= image_tag "placeholder_image.jpg", class: "card-img-top", alt: "Placeholder" %>
+    <% end %>
+    
+  
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <b>User: </b><%= version.user.username %>
+      </li>
+      <li class="list-group-item">
+        <b>Name: </b><%= version.name %>
+      </li >
+      <li class="list-group-item">
+        <b>Description: </b><%= version.description %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Show details", version %>
+      </li>
+    </ul>
+  </div>
+
+<div class="d-flex gap-1 justify-content-center m-2">
+  <% if version.link.attached? %>
+    <span>
+      <%= link_to "View", rails_blob_url(version.link, disposition: "inline"), target: "_blank", class: "btn btn-outline-primary" %>
+    </span>
+
+    <span>
+      <%= link_to "Download", rails_blob_url(version.link, disposition: "attachment"), class: "btn btn-outline-primary" %>
+    </span>
+
+    <span>
+      <%#= link_to "Share", rails_blob_url(version.link, host: request.base_url), target: "_blank", class: "btn btn-outline-primary" %>
+    </span>
+
+  <% else %>
+    <p class="fst-italic">No file to download. Edit to add an attachment.</p>
+  <% end %>
+</div>
+
+  <% if version.folder.default_version != version %>
+    <div id="make-default" class="d-flex justify-content-center m-2">
+      <%= button_to "Make default", make_default_path(version.id), method: :get, class: "btn btn-sm btn-success text-white", data: { turbo: false } %>
+    </div>
+  <% end %>
+
+</div>
