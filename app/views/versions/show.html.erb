@@ -1,7 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="row mb-3">
-  <%= link_to "All versions of #{@version.folder.name}", folder_path(@version.folder_id) %>
+  <%= link_to folder_path(@version.folder_id) do %>
+    All versions of <b><%= @version.folder.name %></b>
+  <% end %>
 </div>
 
 <%= render @version %>
