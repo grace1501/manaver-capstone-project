@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   get "versions/:id/make_default", to: "versions#make_default", as: :make_default
   
   get "about", to: "pages#about"
+
+  get("/rake_tasks", { :controller => "rake_tasks", :action => "show" })
+  get("/run_task", { :controller => "rake_tasks", :action => "run_task" })
+
 end

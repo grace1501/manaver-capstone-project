@@ -3,7 +3,7 @@ class VersionsController < ApplicationController
 
   # GET /versions or /versions.json
   def index
-    @versions = Version.all
+    @versions = Version.all.order(created_at: :desc)
   end
 
   # GET /versions/1 or /versions/1.json

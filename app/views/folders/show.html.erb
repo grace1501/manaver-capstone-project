@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="row d-flex gap-2">
+<div class="row d-flex gap-2 mb-3">
   <%= link_to "Back to all files", folders_path %>
   <h1><%= @folder.name %></h1>
   <%= link_to "Change name", edit_folder_path(@folder) %>
 </div>
 
 <!--Display default version-->
-<div id="default-version" class="d-flex justify-content-center">
+<div id="default-version" class="d-flex justify-content-center mb-3">
     <% if @folder.default_version %>
       <%= render "versions/version", version: @folder.default_version %>
     <% else %>
@@ -16,32 +16,29 @@
 </div>
 
 <!--Button to add a new version-->
-<div id="add-new-version" class="text-center m-5">
+<div id="add-new-version" class="text-center mb-5 mt-5">
   <%= link_to "Add a new version", new_version_path(folder_id: @folder.id), class: "btn btn-primary btn-lg" %>
 </div>
 
 <!--Display of all versions-->
 <div class="row text-center">
-  <h2 >All versions</h2>
+  <div class="mb-3">
+    <h2>All versions</h2>
+  </div>
 
   <% if @folder.versions_count < 1 %>
     <p class="fst-italic">No version available to view.</p>
   <% else %>
 
-  <div id="versions" class="d-flex justify-content-center gap-3 flex-wrap m-3">
-    <% @folder.versions.each do |version| %>
-      <div>
-      <%= render version %>
-      </div>
-    <% end %>
-  </div>
+    <div id="versions" class="d-flex justify-content-center gap-3 flex-wrap mb-3 mt-3">
+      <% @folder.versions.each do |version| %>
+        <div><%= render version %></div>
+      <% end %>
+    </div>
   <% end %>
-
 </div>
 
-
-
 <!--Delete folder button-->
-<div class="d-flex justify-content-center m-2">
+<div class="d-flex justify-content-center mb-5 mt-5">
   <%= button_to "Delete this file and all associated versions", @folder, method: :delete, class: "btn btn-danger" %>
 </div>

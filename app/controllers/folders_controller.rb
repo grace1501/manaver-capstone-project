@@ -3,7 +3,7 @@ class FoldersController < ApplicationController
 
   # GET /folders or /folders.json
   def index
-    @folders = Folder.all
+    @folders = Folder.all.order(created_at: :desc)
   end
 
   # GET /folders/1 or /folders/1.json
