@@ -5,7 +5,7 @@
     </div>
   <% end %>
   
-    <% if version.link.attached? %>
+    <% if version.link.attached? && version.link.image? %>
       <%= image_tag url_for(version.link), class: "card-img-top", alt: version.name %>
     <% else %>
       <%= image_tag "placeholder_image.jpg", class: "card-img-top", alt: "Placeholder" %>
