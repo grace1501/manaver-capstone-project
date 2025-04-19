@@ -1,6 +1,6 @@
 <div id="<%= dom_id folder %>"
   <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="col-4">
+    <div class="col-6 col-sm-4 gap-1">
       <div>
         <h4><%= folder.name %></h4>
       </div>
@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="col-3">
+    <div class="col-4 col-sm-4 col-md-4">
       <% if folder.default_version %>
         <%= render "folders/default_version_link", version: folder.default_version %>
       <% else %>
