@@ -21,7 +21,11 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= current_user&.username || "User" %>
+            <% if current_user.present? && current_user.username.present? %>
+              <%= current_user.username %>
+            <% else %>
+              <%= "User" %>
+            <% end %>
           </a>
           
           <ul class="dropdown-menu">
