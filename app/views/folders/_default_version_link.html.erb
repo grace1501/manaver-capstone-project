@@ -1,12 +1,7 @@
 <div id="default-version-link" class="d-flex gap-1 justify-content-start flex-wrap">
 
   <% if version.link.attached? %>
-      <div>
-        <%= link_to "View", rails_blob_url(version.link, disposition: "preview"), target: "_blank", class: "btn btn-outline-primary flex-item" %>
-      </div>
-      <div>
-        <%= link_to "Download", rails_blob_url(version.link, disposition: "attachment"), class: "btn btn-outline-primary flex-item" %>
-      </div>
+    <%= render "versions/links", version: version %>
 
   <% else %>
     <div>
