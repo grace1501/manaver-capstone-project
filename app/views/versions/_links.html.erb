@@ -1,0 +1,14 @@
+<div>
+  <% if version.link.attached? %>
+    <span>
+      <%= link_to "View", rails_blob_url(version.link, disposition: "inline"), target: "_blank", class: "btn btn-outline-primary" %>
+    </span>
+
+    <span>
+      <%= link_to "Download", rails_blob_url(version.link, disposition: "attachment"), class: "btn btn-outline-primary" %>
+    </span>
+
+  <% else %>
+    <p class="fst-italic">No file to download. Edit to add an attachment.</p>
+  <% end %>
+</div>
