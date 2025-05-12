@@ -29,6 +29,7 @@ class Folder < ApplicationRecord
     versions.size
   end
   
+  # NOTE: Good job with validation here, this could be in the policy if pundit was added 
   def default_version_must_belong_to_folder
     if default_version && default_version.folder_id != id
       errors.add(:default_version, 'must belong to this folder')
