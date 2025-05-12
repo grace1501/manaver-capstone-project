@@ -1,4 +1,6 @@
 class VersionsController < ApplicationController
+  # NOTE: Nice job on the clean controllers 
+  
   before_action :set_version, only: %i[ show edit update destroy make_default ]
 
   # GET /versions or /versions.json

@@ -1,4 +1,6 @@
 class RakeTasksController < ApplicationController
+  # NOTE: This is awesome!!! Very cool 
+  
   http_basic_authenticate_with name: ENV.fetch("RAKE_TASK_USERNAME"), password: ENV.fetch("RAKE_TASK_PASSWORD")
 
   require "rake"
